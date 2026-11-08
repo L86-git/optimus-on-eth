@@ -156,6 +156,7 @@ text-align: center;
   @media(max-width:600px){ .quote-card{padding:28px 20px 20px 44px;} .quote-card::before{left:10px;font-size:3rem;} .quote-card.shot-card{padding:12px;} }
   .reveal-btn { display:block; width:calc(100% - 16px); margin:8px auto 0; padding:8px 12px; border-radius:6px; border:1px solid var(--border); background:var(--panel); color:var(--text); font-weight:700; cursor:pointer; }
   .reveal-btn:hover, .reveal-btn:focus-visible { border-color:var(--accent); outline:2px solid var(--accent); outline-offset:2px; }
+  .reveal-warn { color:var(--gold); font-size:.75rem; font-weight:700; text-align:center; padding:6px 8px 0; }
   .reveal-note { color:var(--muted); font-size:.75rem; text-align:center; padding:4px 8px 8px; }
 </style>
 </head>
@@ -358,10 +359,18 @@ text-align: center;
     <p class="sub">The memes that built the culture. Grab them, post them, make more.</p>
     <div class="gallery">
       <div class="gallery-item reveal-item">
-        <img loading="lazy" src="starship-mars-blurred.jpg" data-blur-src="starship-mars-blurred.jpg" data-reveal-src="starship-mars.jpg" alt="Starship to Mars meme: Optimus, aliens and mantises around a launch (part blurred)">
+        <img loading="lazy" src="starship-mars-blurred.jpg" data-blur-src="starship-mars-blurred.jpg" data-reveal-src="starship-mars.jpg" data-alt="Starship to Mars meme: Optimus, aliens and mantises around a launch" alt="Starship to Mars meme: Optimus, aliens and mantises around a launch (part blurred)">
         <div class="caption">First stop: Mars. The welcoming committee looks excited.</div>
         <button type="button" class="reveal-btn" aria-pressed="false">Reveal image</button>
+        <div class="reveal-warn">Viewer discretion advised</div>
         <div class="reveal-note">Community meme / fan art. The embedded post is part of the artwork, not a verified post or endorsement.</div>
+      </div>
+      <div class="gallery-item reveal-item">
+        <img loading="lazy" src="lunch-break-blurred.jpg" data-blur-src="lunch-break-blurred.jpg" data-reveal-src="lunch-break.jpg" data-alt="Office meme: Optimus robot lounging at a desk with feet up" alt="Office meme: Optimus robot lounging at a desk with feet up (part blurred)">
+        <div class="caption">When you’re comfortable with your position.</div>
+        <button type="button" class="reveal-btn" aria-pressed="false">Reveal image</button>
+        <div class="reveal-warn">Viewer discretion advised</div>
+        <div class="reveal-note">Community meme / fan art.</div>
       </div>
       <div class="gallery-item">
         <img loading="lazy" src="Emperor of Mars.jpg" alt="Emperor of Mars">
@@ -656,7 +665,7 @@ text-align: center;
   document.querySelectorAll('.reveal-item').forEach(function(it){var im=it.querySelector('img'),b=it.querySelector('.reveal-btn');
     b.addEventListener('click',function(e){e.stopPropagation();var on=b.getAttribute('aria-pressed')!=='true';
       im.src=on?im.getAttribute('data-reveal-src'):im.getAttribute('data-blur-src');
-      im.alt=on?'Starship to Mars meme: Optimus, aliens and mantises around a launch':'Starship to Mars meme: Optimus, aliens and mantises around a launch (part blurred)';
+      var a=im.getAttribute('data-alt');im.alt=on?a:a+' (part blurred)';
       b.setAttribute('aria-pressed',on?'true':'false');b.textContent=on?'Hide image':'Reveal image';});});
   document.querySelectorAll('.gallery-item img, img.lb-zoom').forEach(function(el){el.addEventListener('click',function(){open(el.getAttribute('src'),el.alt,false);});});
   var vids=document.querySelectorAll('.gallery-item video');
