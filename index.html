@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Optimus on ETH — The Community That Built It</title>
+<meta name="description" content="Optimus on ETH is a community-owned Ethereum meme coin. CTO. Organic. Unstoppable.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Optimus on ETH — The Community That Built It">
+<meta property="og:description" content="Optimus on ETH is a community-owned Ethereum meme coin. CTO. Organic. Unstoppable.">
+<link rel="canonical" href="https://optimus-on-eth.io/">
+<meta property="og:url" content="https://optimus-on-eth.io/">
+<meta property="og:image" content="https://optimus-on-eth.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@Optimus_On_ETH">
+<meta name="twitter:title" content="Optimus on ETH — The Community That Built It">
+<meta name="twitter:description" content="Optimus on ETH is a community-owned Ethereum meme coin. CTO. Organic. Unstoppable.">
+<meta name="twitter:image" content="https://optimus-on-eth.io/og-image.jpg">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --panel: #12121a;
+    --text: #e8e8f0;
+    --muted: #8a8a9a;
+    --accent: #00d4ff;
+    --accent2: #7c3aed;
+    --gold: #f5c542;
+    --border: #2a2a3a;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:'Segoe UI',system-ui,sans-serif; line-height:1.6; }
+  .container { max-width:1100px; margin:0 auto; padding:0 24px; }
+  header { padding:32px 0; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
+  .logo { font-size:1.5rem; font-weight:800; letter-spacing:2px; }
+  .logo span { color:var(--accent); }
+  nav a { color:var(--muted); text-decoration:none; margin-left:24px; font-size:0.9rem; transition:color .2s; }
+  nav a:hover { color:var(--text); }
+  .hero { text-align:center; padding:100px 0 80px; }
+  .hero h1 { font-size:clamp(2.5rem,8vw,5rem); font-weight:900; line-height:1.1; margin-bottom:20px; }
+  .hero h1 em { font-style:normal; background:linear-gradient(90deg,var(--accent),var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .hero p { color:var(--muted); font-size:1.2rem; max-width:600px; margin:0 auto 40px; }
+  .btn { display:inline-block; padding:14px 32px; border-radius:8px; font-weight:700; text-decoration:none; margin:0 8px 12px; transition:transform .15s,box-shadow .15s; }
+  .btn:hover { transform:translateY(-2px); }
+  .btn-primary { background:var(--accent); color:#000; }
+  .btn-primary:hover { box-shadow:0 0 30px rgba(0,212,255,.4); }
+  .btn-secondary { background:transparent; border:1px solid var(--border); color:var(--text); }
+  .btn-secondary:hover { border-color:var(--accent); }
+  .price-box { display:inline-block; background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:20px 32px; margin-bottom:40px; }
+  .price-box .label { color:var(--muted); font-size:0.8rem; text-transform:uppercase; letter-spacing:2px; }
+  .price-box .value { font-size:1.8rem; font-weight:800; margin-top:4px; }
+  .price-box .badge { display:inline-block; background:var(--border); color:var(--muted); font-size:0.7rem; padding:4px 10px; border-radius:20px; margin-top:8px; }
+  section { padding:80px 0; }
+  section h2 { font-size:2rem; font-weight:800; margin-bottom:16px; text-align:center; }
+  section .sub { color:var(--muted); text-align:center; max-width:600px; margin:0 auto 48px; }
+  .story-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; }
+  .card { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:28px; }
+  .card h3 { font-size:1.2rem; margin-bottom:12px; color:var(--accent); }
+  .card p { color:var(--muted); font-size:0.95rem; }
+  .tokenomics-table { width:100%; border-collapse:collapse; background:var(--panel); border-radius:12px; overflow:hidden; }
+  .tokenomics-table td { padding:16px 24px; border-bottom:1px solid var(--border); }
+  .tokenomics-table td:first-child { color:var(--muted); width:40%; }
+  .tokenomics-table tr:last-child td { border-bottom:none; }
+  .timeline { display:flex; flex-wrap:wrap; gap:24px; justify-content:center; }
+  .phase { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:28px; flex:1; min-width:220px; max-width:250px; position:relative; }
+  .phase .num { font-size:2.5rem; font-weight:900; color:var(--accent2); opacity:.3; position:absolute; top:16px; right:20px; }
+  .phase h3 { font-size:1.1rem; margin-bottom:12px; }
+  .phase ul { list-style:none; color:var(--muted); font-size:0.9rem; }
+  .phase ul li { margin-bottom:8px; padding-left:16px; position:relative; }
+  .phase ul li::before { content:"→"; position:absolute; left:0; color:var(--accent); }
+  .steps { counter-reset:step; max-width:600px; margin:0 auto; }
+  .step { counter-increment:step; background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:24px; margin-bottom:16px; display:flex; gap:20px; align-items:flex-start; }
+  .step::before { content:counter(step); background:var(--accent); color:#000; font-weight:900; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .step h4 { margin-bottom:4px; }
+  .step p { color:var(--muted); font-size:0.9rem; }
+  .community-cards { display:flex; gap:24px; justify-content:center; flex-wrap:wrap; }
+  .comm-card { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:32px 48px; text-align:center; text-decoration:none; color:var(--text); transition:border-color .2s,transform .15s; min-width:240px; }
+  .comm-card:hover { border-color:var(--accent); transform:translateY(-3px); }
+  .comm-card .icon { font-size:2rem; margin-bottom:12px; }
+  .comm-card h3 { margin-bottom:4px; }
+  .comm-card p { color:var(--muted); font-size:0.85rem; }
+  .faq details { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:20px 24px; margin-bottom:12px; }
+  .faq summary { cursor:pointer; font-weight:700; list-style:none; }
+  .faq summary::-webkit-details-marker { display:none; }
+  .faq summary::after { content:"+"; float:right; color:var(--accent); font-size:1.2rem; }
+  .faq details[open] summary::after { content:"−"; }
+  .faq p { color:var(--muted); margin-top:12px; font-size:0.95rem; }
+  .contract-box { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:24px; text-align:center; margin-bottom:24px; }
+  .contract-box .addr { font-family:monospace; font-size:0.85rem; word-break:break-all; color:var(--accent); margin:12px 0; }
+  .copy-btn { background:var(--accent2); color:#fff; border:none; padding:10px 24px; border-radius:8px; font-weight:700; cursor:pointer; }
+  .disclaimer { color:var(--muted); font-size:0.75rem; text-align:center; max-width:700px; margin:0 auto; line-height:1.5; }
+  footer { border-top:1px solid var(--border); padding:40px 0; text-align:center; color:var(--muted); font-size:0.85rem; }
+  .hero-ca { max-width:560px; margin:0 auto 32px; }
+  .chart-wrap { position:relative; width:100%; height:450px; border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--panel); }
+  .chart-wrap iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .link-row { text-align:center; margin-top:24px; }
+  .cto-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; margin-bottom:40px; }
+  .cta-row { text-align:center; }
+  .btn-big { font-size:1.15rem; padding:18px 44px; }
+  .cto-tag { text-align:center; font-weight:900; letter-spacing:3px; color:var(--gold); margin-top:24px; }
+  .gallery-item img { cursor:zoom-in; }
+  .lightbox { position:fixed; inset:0; background:rgba(5,5,10,.92); display:none; flex-direction:column; align-items:center; justify-content:center; z-index:1000; padding:24px; cursor:zoom-out; }
+  .lightbox.open { display:flex; }
+  .lightbox img { max-width:100%; max-height:80vh; border-radius:8px; box-shadow:0 0 40px rgba(0,0,0,.6); }
+  .lightbox video { max-width:100%; max-height:80vh; border-radius:8px; box-shadow:0 0 40px rgba(0,0,0,.6); cursor:default; }
+  .gallery-item video { width:100%; height:220px; object-fit:cover; display:block; background:#000; cursor:zoom-in; }
+  .lightbox .lb-bar { margin-top:16px; display:flex; gap:12px; align-items:center; flex-wrap:wrap; justify-content:center; }
+  .lightbox .lb-cap { color:var(--text); font-weight:700; }
+  .lightbox .btn { margin:0; padding:10px 22px; }
+  .lb-close { position:absolute; top:16px; right:20px; background:none; border:none; color:var(--text); font-size:2rem; cursor:pointer; }
+  @media(max-width:600px){ .btn{display:block;margin:0 0 12px;} header{flex-direction:column;gap:16px;padding:24px 16px;} nav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;} nav a{margin-left:0;} .hero{padding:60px 0 50px;} section{padding:56px 0;} .chart-wrap{height:380px;} .comm-card{padding:28px 24px;min-width:0;width:100%;} .lightbox .btn{display:inline-block;} }
+  .gallery {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+gap: 16px;
+margin-top: 24px;
+}
+.gallery-item {
+background: var(--panel);
+border: 1px solid var(--border);
+border-radius: 12px;
+overflow: hidden;
+transition: transform .2s, border-color .2s;
+}
+.gallery-item:hover {
+transform: translateY(-4px);
+border-color: var(--accent);
+}
+.gallery-item img {
+width: 100%;
+height: 220px;
+object-fit: cover;
+display: block;
+}
+.gallery-item .caption {
+padding: 12px 14px;
+font-size: 0.85rem;
+color: var(--muted);
+text-align: center;
+}
+.gallery-item.egg { position: relative; }
+.gallery-item .egg-tag { position: absolute; top: 10px; left: 10px; z-index: 2; background: rgba(10,10,15,.85); color: var(--gold); border: 1px solid var(--gold); border-radius: 999px; padding: 3px 10px; font-size: 0.7rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; pointer-events: none; }
+  .quotes { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; max-width:800px; margin:0 auto; }
+  .quote-card { position:relative; background:var(--panel); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:32px 28px 24px 56px; margin:0; }
+  .quote-card::before { content:"\201C"; position:absolute; left:16px; top:4px; font-size:4rem; line-height:1; color:var(--accent2); font-family:Georgia,serif; }
+  .quote-card blockquote { font-size:1.1rem; font-style:italic; color:var(--text); }
+  .quote-card figcaption { margin-top:16px; color:var(--muted); font-size:0.9rem; font-weight:700; }
+  .quotes { max-width:1000px; align-items:center; }
+  .quote-card.shot-card { padding:16px; }
+  .shot-card::before { content:none; }
+  .shot-card img { display:block; width:100%; max-height:420px; object-fit:contain; border-radius:8px; cursor:zoom-in; background:#fff; }
+  .shot-card figcaption { text-align:center; margin-top:12px; }
+  @media(max-width:600px){ .quote-card{padding:28px 20px 20px 44px;} .quote-card::before{left:10px;font-size:3rem;} .quote-card.shot-card{padding:12px;} }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">OPTIMUS <span>ON ETH</span></div>
+  <nav>
+    <a href="#chart">Chart</a>
+    <a href="#story">Story</a>
+    <a href="#tokenomics">Tokenomics</a>
+    <a href="#how-to-buy">How to Buy</a>
+    <a href="#join-cto">Join the CTO</a>
+    <a href="#community">Community</a>
+    <a href="#memes">Memes</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>OPTIMUS <em>ON ETH</em></h1>
+    <p>Born from a scattered group of believers across the world who found one thing in common: Optimus was going to send. No founders. No insiders. Just a community that took the wheel.</p>
+    <div class="contract-box hero-ca">
+      <div class="label" style="color:var(--muted);font-size:0.8rem;text-transform:uppercase;letter-spacing:2px">Contract Address (Ethereum)</div>
+      <div class="addr">0xfaaab42b52c77f2a1abf078d7d994e69f1454964</div>
+      <button class="copy-btn" onclick="navigator.clipboard.writeText('0xfaaab42b52c77f2a1abf078d7d994e69f1454964').then(()=>this.textContent='Copied!')">Copy Address</button>
+    </div>
+    <div>
+      <a href="https://app.uniswap.org/swap?chain=mainnet&amp;outputCurrency=0xfaaab42b52c77f2a1abf078d7d994e69f1454964" class="btn btn-primary" target="_blank" rel="noopener">Buy on Uniswap</a>
+      <a href="https://t.me/OPTIMUSOGCTO" class="btn btn-secondary" target="_blank" rel="noopener">Join Telegram</a>
+      <a href="https://x.com/Optimus_On_ETH" class="btn btn-secondary" target="_blank" rel="noopener">Follow on X</a>
+    </div>
+  </div>
+</section>
+
+<section id="chart">
+  <div class="container">
+    <h2>Live Chart</h2>
+    <p class="sub">OPTIMUS / WETH on Uniswap V2. Check it yourself — everything's on-chain.</p>
+    <div class="chart-wrap">
+      <iframe src="https://dexscreener.com/ethereum/0x33b2065a8826f4a77f1133dbad4a634ea33db9a5?embed=1&amp;theme=dark&amp;trades=0&amp;info=0" title="Optimus on ETH live chart on Dexscreener" loading="lazy"></iframe>
+    </div>
+    <div class="link-row">
+      <a href="https://dexscreener.com/ethereum/0x33b2065a8826f4a77f1133dbad4a634ea33db9a5" class="btn btn-secondary" target="_blank" rel="noopener">Dexscreener</a>
+      <a href="https://etherscan.io/token/0xfaaab42b52c77f2a1abf078d7d994e69f1454964" class="btn btn-secondary" target="_blank" rel="noopener">Etherscan</a>
+      <a href="https://etherscan.io/token/0x33b2065a8826F4a77F1133DBad4a634EA33db9A5#balances" class="btn btn-secondary" target="_blank" rel="noopener">LP Proof (Burned)</a>
+    </div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="container">
+    <h2>The Story</h2>
+    <p class="sub">This isn't a project someone pitched. It's a project people built — one message, one meme, one believer at a time. BRICK BY BRICK. WE BUILD. </p>
+    <div class="story-grid">
+      <div class="card">
+        <h3>It Started Scattered</h3>
+        <p>No Discord launch party. No paid shillers. Just people in different time zones who kept landing on the same conclusion: Optimus had something the others didn't.</p>
+      </div>
+      <div class="card">
+        <h3>They Took Over</h3>
+        <p>When the original direction stalled, the community didn't wait for permission. They organized, they posted, they held. That's not a takeover story — that's a succession story.</p>
+      </div>
+      <div class="card">
+        <h3>One Mindset</h3>
+        <p>Different countries, different languages, same conviction. The CTO isn't a person — it's a collective decision that Optimus on ETH sends, and everyone else is just along for the ride.</p>
+      </div>
+      <div class="card">
+        <h3>Still Organic</h3>
+        <p>The same energy that built it is what keeps it alive. No marketing budget. No celebrity shills. Just memes, conviction, and a Telegram that never sleeps.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="signature">
+  <div class="container">
+    <h2>The Signature</h2>
+    <div class="card" style="max-width:800px;margin:0 auto;">
+      <p>The contract address opens with faaab — a nod to fab, the heart of Terafab, Elon's mega-factory vision. Inside sits 42, his favorite number — the answer to life, the universe, and everything from Douglas Adams' Hitchhiker's Guide to the Galaxy. The token's identity is a love letter to Elon, hiding in plain sight.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tokenomics">
+  <div class="container">
+    <h2>Tokenomics</h2>
+    <p class="sub">Simple numbers. No hidden wallets. No mystery supply.</p>
+    <table class="tokenomics-table">
+      <tr><td>Token Name</td><td>Optimus AI</td></tr>
+      <tr><td>Symbol</td><td>OPTIMUS</td></tr>
+      <tr><td>Blockchain</td><td>Ethereum (ERC-20)</td></tr>
+      <tr><td>Total Supply</td><td>1,000,000,000 OPTIMUS</td></tr>
+      <tr><td>Buy Tax</td><td>0%</td></tr>
+      <tr><td>Sell Tax</td><td>0%</td></tr>
+      <tr><td>Transfer Tax (wallet-to-wallet)</td><td>9%</td></tr>
+      <tr><td>Liquidity</td><td>Uniswap V2 LP</td></tr>
+      <tr><td>LP</td><td><a href="https://etherscan.io/token/0x33b2065a8826F4a77F1133DBad4a634EA33db9A5#balances" style="color:var(--accent)" target="_blank" rel="noopener">~100% burned</a></td></tr>
+      <tr><td>Ownership</td><td><a href="https://etherscan.io/address/0xfaaab42b52c77f2a1abf078d7d994e69f1454964#code" style="color:var(--accent)" target="_blank" rel="noopener">Renounced</a></td></tr>
+      <tr><td>Holders</td><td><a href="https://etherscan.io/token/0xfaaab42b52c77f2a1abf078d7d994e69f1454964#balances" style="color:var(--accent)" target="_blank" rel="noopener">280+</a></td></tr>
+      <tr><td>Team Allocation</td><td>0% — Community owned</td></tr>
+      <tr><td>Contract Address</td><td style="font-family:monospace;font-size:0.8rem;word-break:break-all">0xfaaab42b52c77f2a1abf078d7d994e69f1454964</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="how-to-buy">
+  <div class="container">
+    <h2>How to Buy</h2>
+    <p class="sub">Four steps. Takes about two minutes if your wallet's ready.</p>
+    <div class="steps">
+      <div class="step">
+        <div>
+          <h4>Get a Wallet</h4>
+          <p>Download MetaMask or any Ethereum-compatible wallet. It's free and takes five minutes to set up.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <h4>Add ETH</h4>
+          <p>Buy Ethereum on Coinbase, Kraken, or wherever you prefer, then send it to your wallet address.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <h4>Go to Uniswap</h4>
+          <p>Open uniswap.org, connect your wallet, and switch to Ethereum mainnet. Paste the Optimus on ETH contract address into the search bar.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <h4>Swap & Confirm</h4>
+          <p>Enter how much ETH you want to spend. OPTIMUS has 0% buy and sell tax, so Uniswap's Auto slippage works. If the swap fails, raise it to 2–3%. Approve the transaction, and you're in. Welcome to Optimus on ETH.</p>
+          <p><strong>Heads up:</strong> sending OPTIMUS from one wallet to another carries a fixed 9% tax, so buy straight into the wallet you'll hold in.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="join-cto">
+  <div class="container">
+    <h2>Join the CTO</h2>
+    <p class="sub">No team is coming to save it — we are the team. Here's how you can help today.</p>
+    <div class="cto-grid">
+      <div class="card"><h3>Join the Telegram</h3><p>That's where the CTO lives. Say gm, get the latest, and find out where the next raid is.</p></div>
+      <div class="card"><h3>Raid &amp; Repost on X</h3><p>Like, reply, repost. Every post from @Optimus_On_ETH that gets pushed reaches someone new.</p></div>
+      <div class="card"><h3>Make Memes</h3><p>Grab the gallery, remix it, make your own. Memes built this culture and memes keep it moving.</p></div>
+      <div class="card"><h3>Share the Contract</h3><p>Make sure people land on the right token. Copy the address above and share it with the chart.</p></div>
+      <div class="card"><h3>Hold the Line</h3><p>Conviction is contagious. The community that stays is the community that builds.</p></div>
+    </div>
+    <div class="cta-row">
+      <a href="https://t.me/OPTIMUSOGCTO" class="btn btn-primary btn-big" target="_blank" rel="noopener">✈️ Join the Telegram</a>
+      <a href="https://x.com/Optimus_On_ETH" class="btn btn-secondary btn-big" target="_blank" rel="noopener">𝕏 Follow @Optimus_On_ETH</a>
+    </div>
+    <p class="cto-tag">BRICK BY BRICK. WE BUILD.</p>
+  </div>
+</section>
+
+<section id="community">
+  <div class="container">
+    <h2>Community</h2>
+    <p class="sub">The real product. Everything else is just the wrapper.</p>
+    <div class="community-cards">
+      <a href="https://t.me/OPTIMUSOGCTO" class="comm-card" target="_blank" rel="noopener">
+        <div class="icon">✈️</div>
+        <h3>Telegram</h3>
+        <p>Join the CTO</p>
+      </a>
+      <a href="https://x.com/Optimus_On_ETH" class="comm-card" target="_blank" rel="noopener">
+        <div class="icon">𝕏</div>
+        <h3>X / Twitter</h3>
+        <p>@Optimus_On_ETH</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="container">
+    <h2>What People Are Saying</h2>
+    <p class="sub">Unpaid. Unprompted. Straight from the timeline.</p>
+    <div class="quotes">
+      <figure class="quote-card">
+        <blockquote>aped some here...these chads grinding hard from months here.. maye musk liked their some posts.. worth to give a chance</blockquote>
+        <figcaption>— Furious Plays, on Telegram</figcaption>
+      </figure>
+      <figure class="quote-card shot-card">
+        <img class="lb-zoom" loading="lazy" src="maye-musk-likes.jpg" alt="X notifications: Maye Musk and others liking Optimus AI community replies">
+        <figcaption>The receipts: Maye Musk liking the community's replies on X</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="memes">
+  <div class="container">
+    <h2>Community Memes</h2>
+    <p class="sub">The memes that built the culture. Grab them, post them, make more.</p>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img loading="lazy" src="Emperor of Mars.jpg" alt="Emperor of Mars">
+        <div class="caption">Emperor of Mars</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="diamond hands.jpg" alt="Diamond Hands">
+        <div class="caption">Diamond Hands</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="be extraordinary.jpg" alt="Be Extraordinary">
+        <div class="caption">Be Extraordinary</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="bot buns.jpg" alt="Bot Buns">
+        <div class="caption">Bot Buns</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="thinking.jpg" alt="Thinking">
+        <div class="caption">Thinking</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="sam smack.jpg" alt="Sam Smack">
+        <div class="caption">Sam Smack</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="abundance on Mars.jpg" alt="Abundance on Mars">
+        <div class="caption">Abundance on Mars</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="biggest product ever.jpg" alt="Biggest Product Ever">
+        <div class="caption">Biggest Product Ever</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="dr optimus.jpg" alt="Dr Optimus">
+        <div class="caption">Dr Optimus</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="elon ecosystem.jpg" alt="Elon Ecosystem">
+        <div class="caption">Elon Ecosystem</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="hanging with friends.jpg" alt="Hanging With Friends">
+        <div class="caption">Hanging With Friends</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="optimus everywhere.jpg" alt="Optimus Everywhere">
+        <div class="caption">Optimus Everywhere</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="optimus pulp fiction.jpg" alt="Optimus Pulp Fiction">
+        <div class="caption">Optimus Pulp Fiction</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="optimus titanic.jpg" alt="Optimus Titanic">
+        <div class="caption">Optimus Titanic</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="power of Optimus.jpg" alt="Power of Optimus">
+        <div class="caption">Power of Optimus</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="problem solving.jpg" alt="Problem Solving">
+        <div class="caption">Problem Solving</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="protect.jpg" alt="Protect">
+        <div class="caption">Protect</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="shame Sam.jpg" alt="Shame Sam">
+        <div class="caption">Shame Sam</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="shhhhh.jpg" alt="Shhhhh">
+        <div class="caption">Shhhhh</div>
+      </div>
+      <div class="gallery-item egg">
+        <span class="egg-tag">🥚 Easter egg</span>
+        <video muted loop playsinline preload="none" poster="images/EasterEggWithinCa-poster.jpg" aria-label="Easter Egg">
+          <source src="images/EasterEggWithinCa.mp4" type="video/mp4">
+        </video>
+        <div class="caption">Easter Egg</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="the-future-is-ours.jpg" alt="The Future Is Ours">
+        <div class="caption">The Future Is Ours</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="creation-of-optimus.jpg" alt="Creation Of Optimus">
+        <div class="caption">Creation Of Optimus</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="weve-only-just-begun.jpg" alt="We&#39;ve Only Just Begun">
+        <div class="caption">We&#39;ve Only Just Begun</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="i-finish-the-job.jpg" alt="I Finish The Job">
+        <div class="caption">I Finish The Job</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="titillating.jpg" alt="Titillating">
+        <div class="caption">Titillating</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="elon-inside.jpg" alt="Elon Inside">
+        <div class="caption">Elon Inside</div>
+      </div>
+      <div class="gallery-item">
+        <video muted loop playsinline preload="none" poster="images/king-of-hearts-poster.jpg" aria-label="King Of Hearts">
+          <source src="images/king-of-hearts.mp4" type="video/mp4">
+        </video>
+        <div class="caption">King Of Hearts</div>
+      </div>
+      <div class="gallery-item">
+        <video muted loop playsinline preload="none" poster="images/dance-party-poster.jpg" aria-label="Dance Party">
+          <source src="images/dance-party.mp4" type="video/mp4">
+        </video>
+        <div class="caption">Dance Party</div>
+      </div>
+      <div class="gallery-item">
+        <video muted loop playsinline preload="none" poster="images/optimus-in-space-poster.jpg" aria-label="Optimus In Space">
+          <source src="images/optimus-in-space.mp4" type="video/mp4">
+        </video>
+        <div class="caption">Optimus In Space</div>
+      </div>
+      <div class="gallery-item egg">
+        <span class="egg-tag">🥚 Easter egg</span>
+        <img loading="lazy" src="atlantis-discovery.jpg" alt="More of that Easter egg">
+        <div class="caption">More of that Easter egg</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="extra-extra.jpg" alt="Extra! Extra!">
+        <div class="caption">Extra! Extra!</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="chuck-norris-approved.jpg" alt="Chuck Norris Approved">
+        <div class="caption">Chuck Norris Approved</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="lfg.jpg" alt="LFG">
+        <div class="caption">LFG</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="to-the-stars-we-go.jpg" alt="To The Stars We Go">
+        <div class="caption">To The Stars We Go</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="the-portal.jpg" alt="The Portal">
+        <div class="caption">The Portal</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="optimus-is-taking-over.jpg" alt="Optimus Is Taking Over">
+        <div class="caption">Optimus Is Taking Over</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="moon-base.jpg" alt="Moon Base">
+        <div class="caption">Moon Base</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="mars-colony.jpg" alt="Mars Colony">
+        <div class="caption">Mars Colony</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="say-anything.jpg" alt="Say Anything">
+        <div class="caption">Say Anything</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="the-artist.jpg" alt="The Artist">
+        <div class="caption">The Artist</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="be-patient.jpg" alt="Be Patient">
+        <div class="caption">Be Patient</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="i-want-this-optimus.jpg" alt="I Want This Optimus">
+        <div class="caption">I Want This Optimus</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="i-got-in-early.jpg" alt="I Got In Early">
+        <div class="caption">I Got In Early</div>
+      </div>
+      <div class="gallery-item">
+        <img loading="lazy" src="timeless-book-club.jpg" alt="Timeless Book Club">
+        <div class="caption">Timeless Book Club</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="roadmap">
+  <div class="container">
+    <h2>Roadmap</h2>
+    <p class="sub">Four phases. Each one earned, not promised.</p>
+    <div class="timeline">
+      <div class="phase">
+        <div class="num">01</div>
+        <h3>Community First</h3>
+        <ul>
+          <li>Grow Telegram & X organically</li>
+          <li>Daily memes, zero paid shills</li>
+          <li>Build the holder base</li>
+          <li>Establish the brand identity</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="num">02</div>
+        <h3>Listings</h3>
+        <ul>
+          <li>CoinGecko & CoinMarketCap</li>
+          <li>Dexscreener token profile (logo + socials) ✅</li>
+          <li>Explore CEX opportunities</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="num">03</div>
+        <h3>Marketing Push</h3>
+        <ul>
+          <li>Influencer partnerships</li>
+          <li>Meme contests & giveaways</li>
+          <li>Cross-community collabs</li>
+          <li>Expand reach globally</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="num">04</div>
+        <h3>Beyond the Meme</h3>
+        <ul>
+          <li>Utility or staking (if it fits)</li>
+          <li>Merchandise & real-world presence</li>
+          <li>Long-term holder rewards</li>
+          <li>Sustainable growth</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <h2>FAQ</h2>
+    <p class="sub">The questions people actually ask before they ape in.</p>
+    <div class="faq">
+      <details>
+        <summary>Is it a honeypot?</summary>
+        <p>No. The contract source is published and verified on <a href="https://etherscan.io/address/0xfaaab42b52c77f2a1abf078d7d994e69f1454964#code" target="_blank" rel="noopener" style="color:var(--accent)">Etherscan</a>, contract ownership has been renounced (owner is the zero address), and people trade in and out on Uniswap every day. Always check for yourself before you buy.</p>
+      </details>
+      <details>
+        <summary>What are the taxes?</summary>
+        <p>0% buy tax and 0% sell tax. Wallet-to-wallet transfers carry a fixed 9% tax that can't be removed because ownership is renounced.</p>
+      </details>
+      <details>
+        <summary>Who controls the liquidity?</summary>
+        <p>Nobody. The OPTIMUS/WETH liquidity sits in the <a href="https://etherscan.io/address/0x33b2065a8826F4a77F1133DBad4a634EA33db9A5" target="_blank" rel="noopener" style="color:var(--accent)">Uniswap V2 pool</a>, and essentially 100% of its LP tokens are burned — sent to the 0x…dEaD address, with the remaining 1,000 wei held by the zero address as Uniswap's permanent minimum liquidity. Burned LP can't be withdrawn by anyone. <a href="https://etherscan.io/token/0x33b2065a8826F4a77F1133DBad4a634EA33db9A5#balances" target="_blank" rel="noopener" style="color:var(--accent)">See the LP holders on Etherscan.</a></p>
+      </details>
+      <details>
+        <summary>What's the deal with the CTO?</summary>
+        <p>There's no single founder. The community took over organically when the original direction stalled. It's a collective — which is exactly why nobody can just walk away with the project.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="contract-box">
+      <div class="label" style="color:var(--muted);font-size:0.8rem;text-transform:uppercase;letter-spacing:2px">Contract Address</div>
+      <div class="addr">0xfaaab42b52c77f2a1abf078d7d994e69f1454964</div>
+      <button class="copy-btn" onclick="navigator.clipboard.writeText('0xfaaab42b52c77f2a1abf078d7d994e69f1454964').then(()=>this.textContent='Copied!')">Copy Address</button>
+    </div>
+    <p class="disclaimer">This token is listed on Etherscan as Optimus AI — Optimus on ETH is the community's name for it. When the original project stalled, holders took over, and this is one of the earliest contracts still standing. Optimus on ETH is a meme coin with no intrinsic value or expectation of financial return. This is not financial advice. Crypto is volatile — only invest what you can afford to lose. Always do your own research.</p>
+  </div>
+</footer>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Meme viewer">
+  <button class="lb-close" aria-label="Close">×</button>
+  <img id="lb-img" src="" alt="">
+  <video id="lb-vid" controls loop playsinline style="display:none"></video>
+  <div class="lb-bar">
+    <span class="lb-cap" id="lb-cap"></span>
+    <a class="btn btn-primary" id="lb-dl" href="#" download>Download</a>
+  </div>
+</div>
+<script>
+(function(){
+  var lb=document.getElementById('lightbox'),img=document.getElementById('lb-img'),vid=document.getElementById('lb-vid'),cap=document.getElementById('lb-cap'),dl=document.getElementById('lb-dl');
+  function open(src,alt,isVideo){cap.textContent=alt;dl.href=src;dl.setAttribute('download',src.split('/').pop());
+    if(isVideo){img.style.display='none';img.removeAttribute('src');vid.style.display='';vid.src=src;vid.setAttribute('aria-label',alt);var p=vid.play();if(p&&p.catch)p.catch(function(){});}
+    else{vid.pause();vid.removeAttribute('src');vid.style.display='none';img.style.display='';img.src=src;img.alt=alt;}
+    lb.classList.add('open');}
+  function close(){lb.classList.remove('open');img.removeAttribute('src');vid.pause();vid.removeAttribute('src');vid.load();}
+  document.querySelectorAll('.gallery-item img, img.lb-zoom').forEach(function(el){el.addEventListener('click',function(){open(el.getAttribute('src'),el.alt,false);});});
+  var vids=document.querySelectorAll('.gallery-item video');
+  vids.forEach(function(v){v.addEventListener('click',function(){var s=v.querySelector('source');var c=v.parentNode.querySelector('.caption');v.pause();open(s.getAttribute('src'),c?c.textContent:'',true);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting&&!lb.classList.contains('open')){v.preload='auto';var p=v.play();if(p&&p.catch)p.catch(function(){});}else{v.pause();}});},{threshold:0.25});
+    vids.forEach(function(v){io.observe(v);});
+  } else { vids.forEach(function(v){v.preload='auto';v.autoplay=true;var p=v.play();if(p&&p.catch)p.catch(function(){});}); }
+  lb.addEventListener('click',function(e){if(e.target!==dl&&e.target!==vid)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))close();});
+})();
+</script>
+</body>
+</html>
