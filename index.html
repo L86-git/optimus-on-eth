@@ -158,6 +158,23 @@ text-align: center;
   .reveal-btn:hover, .reveal-btn:focus-visible { border-color:var(--accent); outline:2px solid var(--accent); outline-offset:2px; }
   .reveal-warn { color:var(--gold); font-size:.75rem; font-weight:700; text-align:center; padding:6px 8px 0; }
   .reveal-note { color:var(--muted); font-size:.75rem; text-align:center; padding:4px 8px 8px; }
+
+  .transparency-wrap { max-width:800px; margin:32px auto 0; }
+  .transparency-wrap .card { margin-bottom:20px; }
+  .transparency-wrap .card:last-child { margin-bottom:0; }
+  .transparency-wrap h3 { font-size:1.15rem; margin-bottom:12px; color:var(--accent); }
+  .transparency-wrap p { color:var(--muted); font-size:0.95rem; }
+  .transparency-lead { border-left:4px solid var(--accent); }
+  .transparency-warn { border-left:4px solid var(--gold); }
+  .transparency-warn h3 { color:var(--gold); }
+  .transparency-list { list-style:none; color:var(--text); font-size:0.95rem; }
+  .transparency-list li { margin-bottom:10px; }
+  .transparency-list li:last-child { margin-bottom:0; }
+  .transparency-verify { list-style:none; }
+  .transparency-verify li { margin-bottom:10px; color:var(--muted); font-size:0.95rem; overflow-wrap:anywhere; }
+  .transparency-verify li:last-child { margin-bottom:0; }
+  .transparency-verify a { color:var(--accent); }
+  .transparency-verify .addr { font-family:monospace; font-size:0.85rem; color:var(--accent); }
 </style>
 </head>
 <body>
@@ -166,6 +183,7 @@ text-align: center;
   <nav>
     <a href="#chart">Chart</a>
     <a href="#story">Story</a>
+    <a href="#transparency">Transparency</a>
     <a href="#tokenomics">Tokenomics</a>
     <a href="#how-to-buy">How to Buy</a>
     <a href="#join-cto">Join the CTO</a>
@@ -239,6 +257,49 @@ text-align: center;
     <h2>The Signature</h2>
     <div class="card" style="max-width:800px;margin:0 auto;">
       <p>The contract address opens with faaab — a nod to fab, the heart of Terafab, Elon's mega-factory vision. Inside sits 42, his favorite number — the answer to life, the universe, and everything from Douglas Adams' Hitchhiker's Guide to the Galaxy. The token's identity is a love letter to Elon, hiding in plain sight.</p>
+    </div>
+  </div>
+</section>
+
+<section id="transparency">
+  <div class="container">
+    <h2>Full Transparency: The History of Optimus on ETH</h2>
+    <div class="transparency-wrap">
+      <div class="card transparency-lead">
+        <h3>The short version</h3>
+        <p>The original Optimus launch on January 8, 2025 was farmed by snipers. We traced it on-chain, and those wallets are long gone. What's left is a clean, 100% community takeover: ownership renounced, LP burned, and run entirely by the community.</p>
+      </div>
+      <div class="card">
+        <h3>What happened at launch</h3>
+        <p>In the same block that trading opened, 30 linked wallets used a bundle to snipe about 50% of the supply. They sold all of it within 90 minutes. The same operator ran the same playbook on another token the day before. The original team left, and the community stepped in to take over the project.</p>
+      </div>
+      <div class="card">
+        <h3>Where things stand today</h3>
+        <ul class="transparency-list">
+          <li>✅ Ownership renounced, so the contract can't be changed</li>
+          <li>✅ LP burned, so the liquidity can't be pulled</li>
+          <li>✅ Launch sniper wallets hold 0 tokens</li>
+          <li>✅ Run entirely by the community</li>
+        </ul>
+      </div>
+      <div class="card transparency-warn">
+        <h3>One thing every holder should know</h3>
+        <p>Buys and sells on Uniswap have 0% tax. Wallet-to-wallet transfers have a 9% tax that goes to the original dev's wallet. That's hardcoded in the contract and can't be changed, so buy and sell on Uniswap and don't send tokens directly between wallets.</p>
+      </div>
+      <div class="card">
+        <h3>Why we're telling you this</h3>
+        <p>Most projects bury their history. We'd rather show you everything and let you check it yourself.</p>
+      </div>
+      <div class="card">
+        <h3>Verify it yourself</h3>
+        <ul class="transparency-verify">
+          <li>Contract: <span class="addr">0xfaaab42b52c77f2a1abf078d7d994e69f1454964</span></li>
+          <li>Etherscan: <a href="https://etherscan.io/token/0xfaaab42b52c77f2a1abf078d7d994e69f1454964" target="_blank" rel="noopener">etherscan.io/token/0xfaaab42b52c77f2a1abf078d7d994e69f1454964</a></li>
+          <li>Community: <a href="https://t.me/OPTIMUSOGCTO" target="_blank" rel="noopener">t.me/OPTIMUSOGCTO</a></li>
+          <li>X: <a href="https://x.com/Optimus_On_ETH" target="_blank" rel="noopener">x.com/Optimus_On_ETH</a></li>
+          <li>Transparency post on X: <a href="https://x.com/Optimus_On_ETH/status/2126096605929468153" target="_blank" rel="noopener">x.com/Optimus_On_ETH/status/2126096605929468153</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
